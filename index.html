@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshan - Portfolio</title>
+    <meta name="description" content="Product Designer, Change Maker, Storyteller">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Figtree:ital,wght@0,400;0,500;0,600;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"DM Sans"', 'sans-serif'],
+                        display: ['"Figtree"', 'sans-serif'],
+                        serif: ['"Libre Baskerville"', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#001666',
+                            gray: '#6b6b6b',
+                            light: '#f6f6f6'
+                        }
+                    },
+                    animation: {
+                        'spin-slow': 'spin 12s linear infinite',
+                        'marquee': 'marquee 30s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Scroll Reveal -->
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Hide scrollbar for the horizontal scrolling section */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 font-sans antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 transition-transform duration-300 transform translate-y-0">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2">
+                <img src="https://framerusercontent.com/images/6i3DbwIDof6Tax3uV7v9RHzRtk187f.png" alt="Logo" class="h-8 w-auto object-contain">
+            </a>
+            
+            <div class="hidden md:flex gap-8 items-center font-display font-medium text-gray-500">
+                <a href="works.html" class="text-black hover:text-blue-600 transition-colors">Work</a>
+                <a href="#" class="hover:text-black transition-colors">Playground</a>
+                <a href="about.html" class="hover:text-black transition-colors">About</a>
+            </div>
+
+            <a href="#" class="bg-black text-white px-6 py-2 rounded-full font-medium hover:bg-gray-800 transition-all shadow-sm">
+                Resume
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="mt-32 pt-20 pb-32 px-6 max-w-7xl mx-auto flex flex-col items-center text-center relative reveal min-h-[80vh] justify-center">
+        
+        <!-- Floating Background Images (Hidden on mobile to avoid covering text) -->
+        <div class="absolute inset-0 pointer-events-none hidden md:block z-0 overflow-visible">
+            <!-- Top Left -->
+            <img src="https://framerusercontent.com/images/OJGN6VxCdyvGCDwmGE6kScw.jpg" class="absolute -top-[5%] left-[5%] lg:left-[10%] xl:left-[15%] w-48 lg:w-56 rounded-3xl shadow-lg -rotate-[15deg] object-cover aspect-square" alt="Work process">
+            <!-- Top Right -->
+            <img src="https://framerusercontent.com/images/eXOEPO3q9IHIuEtT61qB71U2fmo.jpg" class="absolute -top-[10%] right-[5%] lg:right-[10%] xl:right-[15%] w-40 lg:w-48 rounded-3xl shadow-lg rotate-[15deg] object-cover aspect-[3/4]" alt="Testing">
+            <!-- Bottom Left -->
+            <img src="https://framerusercontent.com/images/LEVqoorXIVLT0uVtLrv7DSlMUJk.jpg" class="absolute bottom-[10%] left-[2%] lg:left-[8%] xl:left-[12%] w-56 lg:w-64 rounded-3xl shadow-lg -rotate-[10deg] object-cover aspect-video" alt="Exhibition">
+            <!-- Bottom Right -->
+            <img src="https://framerusercontent.com/images/uZxYWQ0d28JTeAC8FRea6qtRb34.jpg" class="absolute bottom-[5%] right-[5%] lg:right-[10%] xl:right-[15%] w-48 lg:w-56 rounded-3xl shadow-lg rotate-[15deg] object-cover aspect-square" alt="Mural">
+        </div>
+
+        <!-- Arch Text -->
+        <div class="relative w-64 h-24 mb-2 flex justify-center items-end z-10 pointer-events-none">
+            <svg viewBox="0 0 200 80" class="w-full h-full overflow-visible">
+                <path id="arch-curve" d="M 20 80 Q 100 10 180 80" fill="transparent" />
+                <text class="text-[20px] font-sans text-gray-700" fill="currentColor">
+                    <textPath href="#arch-curve" startOffset="50%" text-anchor="middle">Hi, I'm Harshan</textPath>
+                </text>
+            </svg>
+        </div>
+
+        <h1 class="font-serif italic text-4xl md:text-4xl lg:text-5xl text-brand-navy mb-8 tracking-tight leading-tight max-w-4xl relative z-10">
+            Product Designer, Change Maker, Storyteller
+        </h1>
+        <p class="text-lg md:text-xl text-gray-900 max-w-2xl font-sans relative z-10 font-medium">
+            Currently shaping user-facing dashboard<br class="hidden md:block"> experience @ WeRadiate, NYC
+        </p>
+    </header>
+
+    <!-- Sneak Peek Carousel -->
+    <section class="py-16 overflow-hidden bg-white reveal">
+        <h2 class="font-serif italic text-2xl md:text-3xl text-brand-navy text-center mb-10">
+            Sneak peak of my past works
+        </h2>
+        
+        <div class="flex overflow-hidden group w-full cursor-pointer relative">
+            <!-- Marquee Track 1 -->
+            <div class="flex gap-4 px-2 min-w-max animate-marquee group-hover:[animation-play-state:paused]">
+                <img src="https://framerusercontent.com/images/PyBfCDJwU6rHQn282byKU5PY9Ik.png" alt="Work 1" class="h-64 w-auto rounded-xl object-cover shadow-sm" loading="lazy">
+                <img src="https://framerusercontent.com/images/qmG6HLmoOkPnUD9E7XLVQmq0w.png" alt="Work 2" class="h-64 w-auto rounded-xl object-cover shadow-sm" loading="lazy">
+                <video src="https://framerusercontent.com/assets/mPDKbc8CGDxODXGWTgrQWQEPzhI.mp4" autoplay loop muted playsinline class="h-64 w-auto rounded-xl object-cover shadow-sm"></video>
+                <img src="https://framerusercontent.com/images/ZsrplkUL1MZZH5qph0bRbj4.png" alt="Work 3" class="h-64 w-auto rounded-xl object-cover shadow-sm" loading="lazy">
+                <img src="https://framerusercontent.com/images/NxYbRlP1VTQkHz24LMNOwub2NY.png" alt="Work 4" class="h-64 w-auto rounded-xl object-cover shadow-sm" loading="lazy">
+            </div>
+            
+            <!-- Marquee Track 2 (Duplicated for seamless loop) -->
+            <div class="flex gap-4 px-2 min-w-max animate-marquee group-hover:[animation-play-state:paused]" aria-hidden="true">
+                <img src="https://framerusercontent.com/images/PyBfCDJwU6rHQn282byKU5PY9Ik.png" alt="Work 1" class="h-64 w-auto rounded-xl object-cover shadow-sm" loading="lazy">
+                <img src="https://framerusercontent.com/images/qmG6HLmoOkPnUD9E7XLVQmq0w.png" alt="Work 2" class="h-64 w-auto rounded-xl object-cover shadow-sm" loading="lazy">
+                <video src="https://framerusercontent.com/assets/mPDKbc8CGDxODXGWTgrQWQEPzhI.mp4" autoplay loop muted playsinline class="h-64 w-auto rounded-xl object-cover shadow-sm"></video>
+                <img src="https://framerusercontent.com/images/ZsrplkUL1MZZH5qph0bRbj4.png" alt="Work 3" class="h-64 w-auto rounded-xl object-cover shadow-sm" loading="lazy">
+                <img src="https://framerusercontent.com/images/NxYbRlP1VTQkHz24LMNOwub2NY.png" alt="Work 4" class="h-64 w-auto rounded-xl object-cover shadow-sm" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Selected Works -->
+    <main class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="font-serif italic text-3xl md:text-4xl text-brand-navy mb-16 reveal">
+            Selected Works
+        </h2>
+
+        <!-- Project 1 -->
+        <article class="mb-32 reveal">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
+                <div>
+                    <div class="flex items-center gap-3 mb-2">
+                        <img src="https://framerusercontent.com/images/cP4yARM7b8uaSshCcX87RlqUm8dfa8.png" alt="WeRadiate" class="w-8 h-8 rounded shadow-sm border border-gray-200">
+                        <h3 class="text-xl font-bold">Ragworks AI Agentic Dashboard</h3>
+                    </div>
+                    <span class="text-brand-gray text-sm font-medium uppercase tracking-wider">Ongoing</span>
+                </div>
+                <p class="text-lg md:text-xl text-gray-700 max-w-xl md:text-right">
+                    Designed the core features for their SaaS Product, resulting in 
+                    <strong class="text-black font-bold">2x increase in the users' operational efficiency</strong>
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 mb-6">
+                <div class="md:col-span-4 rounded-xl overflow-hidden border border-gray-200 shadow-sm h-[300px]">
+                    <img src="https://framerusercontent.com/images/V6wx8UqAp0vmWOYxBT6z4MFlr4.png" alt="WeRadiate Dashboard" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+                <!-- Hidden on mobile -->
+                <div class="md:col-span-5 rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-gray-50 h-[300px] hidden md:flex items-center justify-center">
+                    <video src="https://framerusercontent.com/assets/QClkHY81XoAwSNLqiujVJG5PGw.mp4" autoplay loop muted playsinline class="w-full h-full object-cover"></video>
+                </div>
+                <!-- Hidden on mobile -->
+                <div class="md:col-span-3 rounded-xl overflow-hidden border border-gray-200 shadow-sm h-[300px] hidden md:block">
+                    <img src="https://framerusercontent.com/images/6W9AgxIPB4yAdligUq2IoEkydw.png" alt="WeRadiate Mobile" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+            </div>
+            
+            <div class="text-right">
+                <a href="ragworks.html" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center gap-1 transition-colors">
+                    View Case Study <span class="text-lg">&rarr;</span>
+                </a>
+            </div>
+            <hr class="mt-16 border-gray-200">
+        </article>
+
+        <!-- Project 2 -->
+        <article class="mb-32 reveal">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
+                <div>
+                    <div class="flex items-center gap-3 mb-2">
+                        <img src="https://framerusercontent.com/images/TuXpbzQt9KcHZMij6OdE9slvI.png" alt="Livable City" class="w-20 h-auto object-contain bg-black px-2 py-1 rounded shadow-sm border border-gray-200">
+                        <h3 class="text-xl font-bold">Livable City - Sunday Streets SF</h3>
+                    </div>
+                    <span class="text-brand-gray text-sm font-medium uppercase tracking-wider">2025</span>
+                </div>
+                <p class="text-lg md:text-xl text-gray-700 max-w-xl md:text-right">
+                    AI Activity Generator Tool for a non-profit org, resulting in 
+                    <strong class="text-black font-bold">+50% footfall and 100+ new exhibitors</strong>
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 mb-6">
+                <div class="md:col-span-3 rounded-xl overflow-hidden border border-gray-200 shadow-sm h-[280px]">
+                    <img src="https://framerusercontent.com/images/FKXdMCkuzb6jZ6N0FtADZUL9E.png" alt="Livable City UI" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+                <!-- Hidden on mobile -->
+                <div class="md:col-span-6 rounded-xl overflow-hidden border border-gray-200 shadow-sm h-[280px] hidden md:block">
+                    <img src="https://framerusercontent.com/images/9F2DWhRS5QW9dKd4EGRhjUFZs.png" alt="Livable City Dashboard" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+                <!-- Hidden on mobile -->
+                <div class="md:col-span-3 rounded-xl overflow-hidden border border-gray-200 shadow-sm h-[280px] hidden md:block">
+                    <img src="https://framerusercontent.com/images/6ghHFACqJzWShJ1njo8CMktJw0.png" alt="Livable City Feature" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+            </div>
+            
+            <div class="text-right">
+                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center gap-1 transition-colors">
+                    View Case Study <span class="text-lg">&rarr;</span>
+                </a>
+            </div>
+            <hr class="mt-16 border-gray-200">
+        </article>
+
+        <!-- Project 3 -->
+        <article class="mb-32 reveal">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
+                <div>
+                    <div class="flex items-center gap-3 mb-2">
+                        <img src="https://framerusercontent.com/images/1qSkvE4zFOVU2FEQ1Jq2v5iJYE908d.png" alt="Bud.AI" class="w-8 h-8 rounded shadow-sm border border-gray-200">
+                        <h3 class="text-xl font-bold">Bud.AI</h3>
+                    </div>
+                    <span class="text-brand-gray text-sm font-medium uppercase tracking-wider">2024</span>
+                </div>
+                <p class="text-lg md:text-xl text-gray-700 max-w-xl md:text-right">
+                    Nature inspired AI tool turning biological insights into actionable artifacts, 
+                    <strong class="text-black font-bold">increasing sustainable material adoption by 25%</strong>
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 mb-6">
+                <div class="md:col-span-4 rounded-xl overflow-hidden border border-gray-200 shadow-sm h-[250px]">
+                    <img src="https://framerusercontent.com/images/4PDjnn8zor6Ad2tI9pMKo3GWH0.png" alt="Bud.AI UI" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+                <!-- Hidden on mobile -->
+                <div class="md:col-span-4 rounded-xl overflow-hidden border border-gray-200 shadow-sm h-[250px] hidden md:block">
+                    <img src="https://framerusercontent.com/images/Tcv8Lp5mwPptY6K8cXH6fglcQ.png" alt="Bud.AI Web" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+                <!-- Hidden on mobile -->
+                <div class="md:col-span-4 rounded-xl overflow-hidden border border-gray-200 shadow-sm h-[250px] hidden md:block">
+                    <img src="https://framerusercontent.com/images/HloxbBzFHOCEC9G1Vq6TqAPETs.png" alt="Bud.AI Mobile" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+            </div>
+            
+            <div class="text-right">
+                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center gap-1 transition-colors">
+                    View Case Study <span class="text-lg">&rarr;</span>
+                </a>
+            </div>
+            <hr class="mt-16 border-gray-200">
+        </article>
+
+        <!-- Project 4 -->
+        <article class="mb-32 reveal">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Scene</h3>
+                    <span class="text-brand-gray text-sm font-medium uppercase tracking-wider">2024</span>
+                </div>
+                <p class="text-lg md:text-xl text-gray-700 max-w-xl md:text-right">
+                    0 &rarr; 1 Product app concept, simplifying hangout experiences for friend groups, 
+                    <strong class="text-black font-bold">reducing planning time from 1hr to 10 mins</strong>
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 mb-6">
+                <div class="md:col-span-3 rounded-xl overflow-hidden border border-gray-200 shadow-sm h-[320px]">
+                    <video src="https://framerusercontent.com/assets/zQLQeVOpV6zDJZpwV444LUByT4.mp4" autoplay loop muted playsinline class="w-full h-full object-cover"></video>
+                </div>
+                <!-- Hidden on mobile -->
+                <div class="md:col-span-6 rounded-xl overflow-hidden border border-gray-200 shadow-sm h-[320px] hidden md:block">
+                    <video src="https://framerusercontent.com/assets/DfaPMaPPScofCEJvgSoIaNUHoc4.mp4" autoplay loop muted playsinline class="w-full h-full object-cover"></video>
+                </div>
+                <!-- Hidden on mobile -->
+                <div class="md:col-span-3 rounded-xl overflow-hidden border border-gray-200 shadow-sm h-[320px] hidden md:block">
+                    <img src="https://framerusercontent.com/images/eVyeDn5LBVC6OS2pHs57AyvpHE.png" alt="Scene App" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+            </div>
+            
+            <div class="text-right">
+                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center gap-1 transition-colors">
+                    View Case Study <span class="text-lg">&rarr;</span>
+                </a>
+            </div>
+            <hr class="mt-16 border-gray-200">
+        </article>
+
+        <!-- Project 5 -->
+        <article class="mb-20 reveal">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Ritual</h3>
+                    <span class="text-brand-gray text-sm font-medium uppercase tracking-wider">2025</span>
+                </div>
+                <p class="text-lg md:text-xl text-gray-700 max-w-xl md:text-right">
+                    AI powered connected system helping women manage PCOS through 
+                    <strong class="text-black font-bold">personalized guidance on lifestyle and symptoms</strong>
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 mb-6">
+                <div class="md:col-span-4 rounded-xl overflow-hidden border border-gray-200 shadow-sm h-[280px]">
+                    <img src="https://framerusercontent.com/images/zNG7in5rKQ6Vj8FenllRGXy4aAQ.png" alt="Ritual Hardware" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+                <!-- Hidden on mobile -->
+                <div class="md:col-span-5 rounded-xl overflow-hidden border border-gray-200 shadow-sm h-[280px] hidden md:block">
+                    <video src="https://framerusercontent.com/assets/YXEeamgADF513OUQCiBLKvIJgs.mp4" autoplay loop muted playsinline class="w-full h-full object-cover"></video>
+                </div>
+                <!-- Hidden on mobile -->
+                <div class="md:col-span-3 rounded-xl overflow-hidden border border-gray-200 shadow-sm h-[280px] hidden md:block">
+                    <img src="https://framerusercontent.com/images/h7ZbJC5XrdBiUWI2k2Dc5XhlcRU.png" alt="Ritual App" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+            </div>
+            
+            <div class="text-right">
+                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center gap-1 transition-colors">
+                    View Case Study <span class="text-lg">&rarr;</span>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Other Works Section -->
+    <section class="max-w-7xl mx-auto px-6 pb-32">
+        <h2 class="font-serif italic text-2xl md:text-3xl text-brand-navy mb-10 reveal">
+            Other Works
+        </h2>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Other 1 -->
+            <div class="reveal">
+                <div class="mb-4">
+                    <h3 class="text-xl font-bold mb-1">WeRadiate - Product Identity</h3>
+                    <span class="text-brand-gray text-sm font-medium uppercase tracking-wider">2022 - 2023</span>
+                </div>
+                <p class="text-gray-700 mb-6 font-medium">
+                    <span class="font-normal">Developing a cohesive visual product identity,</span> 
+                    increasing clients & driving revenue growth by 70% YOY
+                </p>
+                <div class="rounded-xl overflow-hidden border border-gray-200 shadow-sm h-[300px] mb-4">
+                    <img src="https://framerusercontent.com/images/vkucjKlQO4zfmtSP6jLWtZSv3d0.png" alt="Identity" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center gap-1 transition-colors">
+                    View Case Study &rarr;
+                </a>
+            </div>
+
+            <!-- Other 2 -->
+            <div class="reveal">
+                <div class="mb-4">
+                    <h3 class="text-xl font-bold mb-1">Kodiak- Custom Icon Suite</h3>
+                    <span class="text-brand-gray text-sm font-medium uppercase tracking-wider">2023</span>
+                </div>
+                <p class="text-gray-700 mb-6 font-medium">
+                    <span class="font-normal">Building an custom icon suite for a Health-Tech company,</span> 
+                    increasing footfall by 25% and reducing bounce rate by 9%
+                </p>
+                <div class="rounded-xl overflow-hidden border border-gray-200 shadow-sm h-[300px] mb-4">
+                    <img src="https://framerusercontent.com/images/PSH6GxgiqEKSQqUO5I2oZWxo4.png" alt="Icons" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center gap-1 transition-colors">
+                    View Case Study &rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white px-6 py-16 md:py-32 reveal mt-10">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
+            
+            <!-- Column 1: Big Text -->
+            <div class="lg:col-span-6 md:col-span-2">
+                <h2 class="font-serif italic text-5xl md:text-6xl text-[#e2e1fc] leading-tight mb-4">
+                    Let's ✧ make <br> something ✺ <br> wonderful
+                </h2>
+                <p class="text-[#e2e1fc]/70 text-sm tracking-widest mt-8 font-display">PORTFOLIO 2025</p>
+            </div>
+
+            <!-- Column 2: Contact Info -->
+            <div class="lg:col-span-4 flex flex-col gap-8 font-display">
+                <div>
+                    <p class="text-gray-400 text-sm uppercase tracking-wider mb-2">Reach out to me</p>
+                    <a href="mailto:aashnakeswani@gmail.com" class="text-xl md:text-2xl underline hover:text-blue-400 transition-colors break-all">
+                        aashnakeswani@gmail.com
+                    </a>
+                </div>
+                <div>
+                    <p class="text-gray-400 text-sm uppercase tracking-wider mb-4">Find me on</p>
+                    <div class="flex gap-4">
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/aashna-keswani/" target="_blank" class="bg-white/10 p-3 rounded-full hover:bg-blue-600 transition-colors">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M 7.411 20.03 L 7.411 9.234 L 3.767 9.234 L 3.767 20.03 L 7.411 20.03 Z M 5.589 7.76 C 6.859 7.76 7.65 6.931 7.65 5.895 C 7.627 4.836 6.859 4.03 5.613 4.03 C 4.366 4.03 3.551 4.836 3.551 5.895 C 3.551 6.931 4.342 7.76 5.565 7.76 L 5.589 7.76 Z M 9.427 20.03 L 13.071 20.03 L 13.071 14.001 C 13.071 13.678 13.095 13.356 13.191 13.126 C 13.455 12.481 14.054 11.813 15.061 11.813 C 16.38 11.813 16.907 12.803 16.907 14.255 L 16.907 20.03 L 20.551 20.03 L 20.551 13.84 C 20.551 10.524 18.753 8.981 16.356 8.981 C 14.39 8.981 13.527 10.063 13.047 10.799 L 13.071 10.799 L 13.071 9.234 L 9.427 9.234 C 9.475 10.247 9.427 20.03 9.427 20.03 Z"></path></svg>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/crazystickerladyy/" target="_blank" class="bg-white/10 p-3 rounded-full hover:bg-pink-600 transition-colors">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M 4 8.667 C 4 6.089 6.089 4 8.667 4 L 15.333 4 C 17.911 4 20 6.089 20 8.667 L 20 15.333 C 20 17.911 17.911 20 15.333 20 L 8.667 20 C 6.089 20 4 17.911 4 15.333 Z M 15.333 7.333 C 15.322 7.817 15.574 8.268 15.991 8.513 C 16.408 8.758 16.924 8.758 17.341 8.513 C 17.758 8.269 18.01 7.817 17.999 7.334 C 17.983 6.609 17.391 6.03 16.667 6.03 C 15.942 6.03 15.35 6.609 15.333 7.333 Z M 8.667 12 C 8.667 13.841 10.16 15.334 12.001 15.333 C 13.842 15.333 15.334 13.84 15.334 11.999 C 15.334 10.158 13.841 8.666 12 8.666 C 10.159 8.666 8.666 10.159 8.667 12 Z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 3: Footer Navigation -->
+            <div class="lg:col-span-2 flex flex-col gap-4 text-lg font-display">
+                <a href="#" class="hover:text-blue-400 transition-colors flex items-center justify-between group">Home <span class="text-sm opacity-50 group-hover:opacity-100 transition-opacity">&nearr;</span></a>
+                <a href="#" class="hover:text-blue-400 transition-colors flex items-center justify-between group">Play <span class="text-sm opacity-50 group-hover:opacity-100 transition-opacity">&nearr;</span></a>
+                <a href="#" class="hover:text-blue-400 transition-colors flex items-center justify-between group">About <span class="text-sm opacity-50 group-hover:opacity-100 transition-opacity">&nearr;</span></a>
+            </div>
+            
+        </div>
+    </footer>
+
+    <!-- Scroll Reveal JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 100;
+
+                reveals.forEach(reveal => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Trigger once on load
+
+            // Navbar Hide/Show on Scroll logic
+            const navbar = document.getElementById('navbar');
+            let lastScrollTop = 0;
+
+            window.addEventListener('scroll', () => {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop && scrollTop > 60) {
+                    // Scrolling down - hide navbar
+                    navbar.classList.remove('translate-y-0');
+                    navbar.classList.add('-translate-y-full');
+                } else {
+                    // Scrolling up - show navbar
+                    navbar.classList.remove('-translate-y-full');
+                    navbar.classList.add('translate-y-0');
+                }
+                lastScrollTop = scrollTop;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bud.Ai - Case Study</title>
+    <meta name="description" content="Turning nature's strategies into actionable artifacts for innovators, designers and researchers.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons for simple UI elements -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"DM Sans"', 'sans-serif'],
+                        serif: ['"Libre Baskerville"', 'serif'],
+                        display: ['"Figtree"', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#121212',
+                        offwhite: '#f3f3ee',
+                        cardbg: '#f8f8ff'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
+        .text-balance {
+            text-wrap: balance;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 font-sans antialiased selection:bg-blue-200 selection:text-blue-900">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 transition-transform duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 overflow-hidden rounded-lg group-hover:scale-105 transition-transform">
+                    <img src="https://framerusercontent.com/images/6i3DbwIDof6Tax3uV7v9RHzRtk187f.png" alt="Logo" class="w-full h-full object-cover">
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 bg-gray-50/50 px-8 py-3 rounded-full border border-gray-100">
+                <a href="works.html" class="font-display font-medium text-[15px] hover:text-blue-600 transition-colors">Work</a>
+                <a href="#playground" class="font-display font-medium text-[15px] text-gray-500 hover:text-blue-600 transition-colors">Playground</a>
+                <a href="about.html" class="font-display font-medium text-[15px] text-gray-500 hover:text-blue-600 transition-colors">About</a>
+            </div>
+
+            <!-- Resume Button -->
+            <div class="hidden md:flex">
+                <a href="https://drive.google.com/file/d/1L-5CLmUjqoa8CTmLdqn8HN0jWUb8e8A5/view" target="_blank" class="flex items-center gap-2 bg-dark text-white px-6 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors shadow-sm hover:shadow-md">
+                    Resume
+                    <i class="ph ph-arrow-up-right"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-2xl text-gray-800" id="mobile-menu-btn">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white border-t border-gray-100 px-6 py-4 flex-col gap-4 absolute w-full shadow-xl" id="mobile-menu">
+            <a href="#work" class="font-display font-medium text-lg">Work</a>
+            <a href="#playground" class="font-display font-medium text-lg text-gray-600">Playground</a>
+            <a href="#about" class="font-display font-medium text-lg text-gray-600">About</a>
+            <a href="https://drive.google.com/file/d/1L-5CLmUjqoa8CTmLdqn8HN0jWUb8e8A5/view" target="_blank" class="font-medium text-blue-600 mt-2">View Resume <i class="ph ph-arrow-up-right"></i></a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="w-full bg-gradient-to-b from-[#f4fff3] to-white pt-32 md:pt-48 pb-16 lg:pb-24 text-center">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8">
+                <h1 class="text-[17px] font-sans text-gray-800 mb-6">Bud.Ai</h1>
+                <h2 class="font-serif italic text-3xl md:text-4xl lg:text-[42px] leading-[1.4] text-balance mx-auto text-black">
+                    Turning nature's strategies into actionable artifacts for innovators, designers<br class="hidden md:block"> and researchers
+                </h2>
+                
+                <div class="flex flex-wrap justify-center gap-4 mt-10">
+                    <span class="bg-[#212020] text-white px-6 py-2.5 rounded-[20px] text-[13px] font-medium tracking-wide">Web App</span>
+                    <span class="bg-[#212020] text-white px-6 py-2.5 rounded-[20px] text-[13px] font-medium tracking-wide">Conversational AI</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hero Image -->
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-20">
+            <div class="rounded-2xl lg:rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100 bg-gray-50">
+                <img src="https://framerusercontent.com/images/3fxaiDyK7QktTlCsEmdyY840895.png" alt="Bud AI Dashboard Preview" class="w-full h-auto object-cover object-bottom" style="max-height: 80vh;">
+            </div>
+        </section>
+
+        <!-- Overview Details Grid -->
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-16 border-t border-gray-100">
+            <h3 class="font-serif italic text-3xl md:text-4xl text-gray-900 mb-12">Overview</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
+                <!-- Role -->
+                <div class="lg:col-span-2 flex flex-col gap-3">
+                    <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-500">My Role</h4>
+                    <p class="text-lg md:text-xl text-gray-800 leading-relaxed">Researching, Conversation Design, Prototyping flows, Visual Design and UI systems.</p>
+                </div>
+                <!-- Outcome -->
+                <div class="lg:col-span-3 flex flex-col gap-3">
+                    <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-500">Outcome</h4>
+                    <p class="text-lg md:text-xl text-gray-800 leading-relaxed">We expect to see a considerable difference in the way industrial designers, researchers and innovators approach sustainable design.</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16 pt-12 border-t border-gray-100">
+                <div class="flex flex-col gap-2">
+                    <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-500">Team</h4>
+                    <p class="text-lg text-gray-800">4 Designers, 2 Eng</p>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-500">Mentor</h4>
+                    <p class="text-lg text-gray-800">Nathan Sherdoff</p>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-500">Status</h4>
+                    <p class="text-lg text-gray-800 italic">Working on building a working prototype</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Problem / Context Section -->
+        <section class="relative bg-dark text-white py-16 mt-16 overflow-hidden">
+            <!-- Background Abstract Image -->
+            <div class="absolute inset-0 opacity-20 mix-blend-overlay">
+                <img src="https://framerusercontent.com/images/IaQxsVDyw4R94xCoZQMAQkTHg2239.png" alt="Abstract Background" class="w-full h-full object-cover">
+            </div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+                <p class="text-gray-400 text-sm font-semibold tracking-widest uppercase mb-16">Context</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-medium leading-tight mb-4">72% of surveyed companies</h2>
+                        <p class="text-xl md:text-2xl text-gray-300 font-light">have found that Biomimicry led to new product ideas or designs.</p>
+                    </div>
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-medium leading-tight mb-4">Less than 10%</h2>
+                        <p class="text-xl md:text-2xl text-gray-300 font-light">of them are able to apply Biomimicry in their workflows.</p>
+                    </div>
+                </div>
+                <p class="text-sm text-green-200/60 mt-[-3rem] mb-24">Sources: PMC/ResearchGate</p>
+
+                <!-- Problem Statement -->
+                <div class="bg-white text-gray-900 rounded-[2rem] p-10 md:p-12 lg:p-16 shadow-2xl">
+                    <h4 class="text-blue-500 font-bold tracking-wider text-sm uppercase mb-4">The Problem</h4>
+                    <h3 class="text-2xl md:text-3xl lg:text-[32px] font-normal text-gray-900 mb-10">
+                        Biomimicry as a tool for design is not as straightforward...
+                    </h3>
+
+                    <!-- Pain points grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-[#f8f9fc] border border-gray-200 rounded-xl p-8 hover:shadow-md transition-shadow">
+                            <i class="ph ph-arrows-out-simple text-[32px] text-gray-800 mb-6 block"></i>
+                            <h4 class="text-[19px] font-medium text-gray-900 mb-3">Scattered Information</h4>
+                            <p class="text-gray-500 text-[14px] leading-relaxed">Users often have to jump between databases, research papers, and design platforms.</p>
+                        </div>
+                        <div class="bg-[#f8f9fc] border border-gray-200 rounded-xl p-8 hover:shadow-md transition-shadow">
+                            <i class="ph ph-activity text-[32px] text-gray-800 mb-6 block"></i>
+                            <h4 class="text-[19px] font-medium text-gray-900 mb-3">Dealing with Complexities</h4>
+                            <p class="text-gray-500 text-[14px] leading-relaxed">Existing databases require extensive understanding -harder for non-experts.</p>
+                        </div>
+                        <div class="bg-[#f8f9fc] border border-gray-200 rounded-xl p-8 hover:shadow-md transition-shadow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-gray-800 mb-6 block">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1" fill="currentColor" stroke="none"></circle>
+                                <circle cx="15.5" cy="8.5" r="1" fill="currentColor" stroke="none"></circle>
+                                <circle cx="8.5" cy="15.5" r="1" fill="currentColor" stroke="none"></circle>
+                                <circle cx="15.5" cy="15.5" r="1" fill="currentColor" stroke="none"></circle>
+                                <circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"></circle>
+                            </svg>
+                            <h4 class="text-[19px] font-medium text-gray-900 mb-3">Unspecific Solutions</h4>
+                            <p class="text-gray-500 text-[14px] leading-relaxed">Platforms don't always deliver applicable, cross-disciplinary solutions.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-16 text-center">
+                        <p class="text-xl text-gray-500 font-light">Leading us to identifying a gap...</p>
+                        <div class="mt-8">
+                            <img src="https://framerusercontent.com/images/3dDOpI9oLM1UviZD28TvcPYntY74d5.png" alt="Gap Diagram" class="max-w-full mx-auto h-auto mix-blend-multiply">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Question -->
+        <section class="max-w-5xl mx-auto px-6 lg:px-8 py-16 text-center">
+            <h4 class="text-blue-600 font-display font-bold tracking-widest text-sm uppercase mb-8">So we asked ourselves...</h4>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight text-balance">
+                How do we enable problem solvers to access and apply nature's insights in a sustainable and practical way?
+            </h2>
+        </section>
+
+        <!-- Hero Video Section -->
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-24">
+            <div class="bg-black rounded-[2rem] overflow-hidden shadow-2xl relative aspect-video md:aspect-[21/9]">
+                <video src="https://framerusercontent.com/assets/zySceHOfH8e3ynm4132uYlVxr4.mp4" autoplay loop muted playsinline class="w-full h-full object-cover opacity-80"></video>
+            </div>
+        </section>
+
+        <!-- Product Interface Showcase -->
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-24 text-center">
+            <h2 class="text-3xl md:text-4xl lg:text-[34px] font-light text-gray-900 mb-12 md:mb-16 text-balance mx-auto">
+                An AI tool that transforms biological insights into actionable artifacts
+            </h2>
+            <div class="w-full max-w-6xl mx-auto">
+                <img src="https://framerusercontent.com/images/ZuoNGLBPB6hw6HMQtk8zxCFsz88a32.png" alt="Bud AI Feature Annotations" class="w-full h-auto">
+            </div>
+        </section>
+
+        <!-- Potential Impact -->
+        <section class="bg-[#1c1c1c] text-white py-16">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+                <p class="text-gray-400 text-sm font-semibold tracking-widest uppercase mb-16">Potential Impact</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-[#2a2a2a] border border-gray-700/50 rounded-2xl p-10 flex flex-col justify-center items-center gap-4 hover:bg-[#333] transition-colors">
+                        <h3 class="text-5xl md:text-6xl font-medium text-blue-400">20%</h3>
+                        <p class="text-gray-300 text-lg">Reduction in Design Waste</p>
+                    </div>
+                    <div class="bg-[#2a2a2a] border border-gray-700/50 rounded-2xl p-10 flex flex-col justify-center items-center gap-4 hover:bg-[#333] transition-colors">
+                        <h3 class="text-5xl md:text-6xl font-medium text-purple-400">25-50%</h3>
+                        <p class="text-gray-300 text-lg">Faster development cycles</p>
+                    </div>
+                    <div class="bg-[#2a2a2a] border border-gray-700/50 rounded-2xl p-10 flex flex-col justify-center items-center gap-4 hover:bg-[#333] transition-colors">
+                        <h3 class="text-5xl md:text-6xl font-medium text-green-400">2x</h3>
+                        <p class="text-gray-300 text-lg">More Sustainable Material Adoption</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+            <h4 class="text-blue-600 font-display font-bold tracking-widest text-sm uppercase mb-16">How it works</h4>
+            
+            <div class="space-y-24">
+                <!-- Feature 1 -->
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                    <div class="lg:w-1/3">
+                        <h3 class="text-2xl md:text-3xl font-light text-gray-900 leading-snug">
+                            According to the inputs, Bud creates a workspace for the user.
+                        </h3>
+                    </div>
+                    <div class="lg:w-2/3 bg-dark rounded-[2rem] p-4 md:p-8 flex items-center justify-center">
+                        <img src="https://framerusercontent.com/images/1mTjSBdsmXNZv63ea6jBzgF16Ed547.png" alt="Workspace UI" class="rounded-xl w-full h-auto shadow-lg">
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20">
+                    <div class="lg:w-1/3">
+                        <h3 class="text-2xl md:text-3xl font-light text-gray-900 leading-snug">
+                            Based on the workspace, user starts the discussion with Bud to find materials.
+                        </h3>
+                    </div>
+                    <div class="lg:w-2/3 bg-gray-100 rounded-[2rem] p-4 md:p-8 flex items-center justify-center overflow-hidden">
+                        <video src="https://framerusercontent.com/assets/uOQzCA8979wsRmGtNmFIdY3spU.mp4" autoplay loop muted playsinline class="rounded-xl w-full h-auto shadow-lg"></video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Features Grid -->
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-24">
+            <div class="bg-[#f3f3ee] rounded-[2rem] p-8 md:p-16 lg:p-24 w-full flex justify-center items-center">
+                <img src="https://framerusercontent.com/images/28LLaVcMF0m8rqosU6uKm2I68bbc6.png" alt="Bud AI Features: Proposes options, works with artifacts, structured inputs, suggested actions" class="w-full h-auto max-w-5xl mix-blend-darken">
+            </div>
+        </section>
+
+        <!-- Behind the Scenes -->
+        <section class="bg-offwhite py-16">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="lg:w-1/2">
+                        <h4 class="text-blue-600 font-display font-bold tracking-widest text-sm uppercase mb-6">Behind the Scenes</h4>
+                        <h2 class="text-3xl md:text-4xl font-light text-gray-900 mb-8">Training our AI to be sustainable</h2>
+                        <p class="text-gray-600 text-lg leading-relaxed">
+                            A significant portion of our research focused on ensuring that the suggestions provided by the AI are inherently tied to sustainable, actionable frameworks. We mapped problem-solving flows, analyzed datasets, and tested archetypes to refine the responses.
+                        </p>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img src="https://framerusercontent.com/images/YYPYWfBf3TXt7X2LdBWvnsZV0mce0bd.png" alt="Process Map" class="rounded-[2rem] w-full h-auto shadow-xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Details -->
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+            <h4 class="text-blue-600 font-display font-bold tracking-widest text-sm uppercase mb-16 text-center">Process</h4>
+            
+            <div class="space-y-32">
+                <!-- Step 1 -->
+                <div class="text-center max-w-4xl mx-auto">
+                    <h3 class="text-3xl font-light text-gray-900 mb-4">Mapping out the common Problem Solving Flow</h3>
+                    <p class="text-gray-500 mb-12">The best products today blend AI seamlessly into familiar workflows. To build Bud, we wanted to do the same.</p>
+                    <div class="rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
+                        <img src="https://framerusercontent.com/images/gym21umjMG7GPdVSyiRCePOY2700299.png" alt="Problem Solving Flow" class="w-full h-auto">
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center max-w-5xl mx-auto">
+                    <h3 class="text-3xl font-light text-gray-900 mb-4">Building two archetypes of our main users</h3>
+                    <p class="text-gray-500 mb-12">Post conversations with 5 types of problem solvers from different walks of life - Designer/Architect etc.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <img src="https://framerusercontent.com/images/YtOOaCaugkx9lPPSDzkgFqZJJ0c914.png" alt="Archetype 1" class="rounded-3xl w-full h-auto shadow-lg border border-gray-100">
+                        <img src="https://framerusercontent.com/images/v72UnbIpg257FKuCQ63N2Lrkkc914.png" alt="Archetype 2" class="rounded-3xl w-full h-auto shadow-lg border border-gray-100">
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center max-w-4xl mx-auto">
+                    <h3 class="text-3xl font-light text-gray-900 mb-4">Synthesizing data into key insights</h3>
+                    <p class="text-gray-500 mb-12">After our research, we narrowed down what we learnt.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                        <div class="bg-gray-50 border border-gray-200 p-8 rounded-2xl">
+                            <i class="ph ph-lightbulb text-3xl text-amber-500 mb-4"></i>
+                            <h4 class="text-lg font-medium mb-2">Inspiration vs. Application</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed italic">"Translating biomimicry into real, practical solutions feels like an abstract thought."</p>
+                        </div>
+                        <div class="bg-gray-50 border border-gray-200 p-8 rounded-2xl">
+                            <i class="ph ph-leaf text-3xl text-green-500 mb-4"></i>
+                            <h4 class="text-lg font-medium mb-2">Sustainability beyond buzzwords</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed italic">Even though biomimicry pulls information from nature, it is not always sustainable.</p>
+                        </div>
+                        <div class="bg-gray-50 border border-gray-200 p-8 rounded-2xl">
+                            <i class="ph ph-cube text-3xl text-blue-500 mb-4"></i>
+                            <h4 class="text-lg font-medium mb-2">Lack of Tangible Outputs</h4>
+                            <p class="text-gray-500 text-sm leading-relaxed italic">"As designers, we need 3D properties, and materials, to test and refine our ideas."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Story in Action (Dark Section) -->
+        <section class="bg-dark text-white py-16">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <p class="text-gray-400 text-sm font-semibold tracking-widest uppercase mb-6">Bud AI In Action</p>
+                    <div class="w-24 h-24 mx-auto mb-8 rounded-full overflow-hidden border-4 border-gray-700">
+                        <!-- Profile Video representation -->
+                        <video src="https://framerusercontent.com/assets/FHwHcAlZfQisCZWhEujW2cCc8.mp4" autoplay loop muted playsinline class="w-full h-full object-cover"></video>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-light text-balance max-w-3xl mx-auto">
+                        User Story : A textile designer exploring sustainable materials for their swimwear collection for athletes.
+                    </h3>
+                </div>
+
+                <!-- Features Showcase -->
+                <div class="space-y-16">
+                    <!-- Showcase 1 -->
+                    <div class="flex flex-col md:flex-row items-center gap-12 bg-[#1a1a1a] rounded-[2rem] p-8 lg:p-12 border border-gray-800">
+                        <div class="md:w-1/3">
+                            <h4 class="text-2xl font-light mb-4 text-white">Guided Setup</h4>
+                            <p class="text-gray-400 leading-relaxed">Creating a workspace through a guided setup of project details for establishing context.</p>
+                        </div>
+                        <div class="md:w-2/3 bg-black rounded-2xl overflow-hidden border border-gray-800">
+                            <video src="https://framerusercontent.com/assets/RdCFafwC8J5MR4jp1oSdjU0uCo.mp4" autoplay loop muted playsinline class="w-full h-auto"></video>
+                        </div>
+                    </div>
+
+                    <!-- Showcase 2 -->
+                    <div class="flex flex-col md:flex-row-reverse items-center gap-12 bg-[#1a1a1a] rounded-[2rem] p-8 lg:p-12 border border-gray-800">
+                        <div class="md:w-1/3">
+                            <h4 class="text-2xl font-light mb-4 text-white">Discussing with Bud</h4>
+                            <p class="text-gray-400 leading-relaxed">User explores quick actions and asks Bud to source some materials for her.</p>
+                        </div>
+                        <div class="md:w-2/3 bg-black rounded-2xl overflow-hidden border border-gray-800">
+                            <video src="https://framerusercontent.com/assets/8vivdWa3pWEzJyyarxLsm8fIMDk.mp4" autoplay loop muted playsinline class="w-full h-auto"></video>
+                        </div>
+                    </div>
+
+                    <!-- Showcase 3 -->
+                    <div class="flex flex-col md:flex-row items-center gap-12 bg-[#1a1a1a] rounded-[2rem] p-8 lg:p-12 border border-gray-800">
+                        <div class="md:w-1/3">
+                            <h4 class="text-2xl font-light mb-4 text-white">Workspace ⇄ Discussion</h4>
+                            <p class="text-gray-400 leading-relaxed">User is able to add missed constraints or specifications to their workspace as they go.</p>
+                        </div>
+                        <div class="md:w-2/3 bg-black rounded-2xl overflow-hidden border border-gray-800">
+                            <video src="https://framerusercontent.com/assets/wSZtxNCt5H9XSIPcf6hRwFXQ2I.mp4" autoplay loop muted playsinline class="w-full h-auto"></video>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16">
+                     <img src="https://framerusercontent.com/images/ntzVNdRPQ5fPgBcTcraijyhWyGY3293.png" alt="App Dashboard Mockup" class="w-full h-auto rounded-[2rem] border border-gray-800">
+                </div>
+            </div>
+        </section>
+
+        <!-- Learnings -->
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-16 border-b border-gray-100">
+            <h3 class="text-3xl md:text-4xl font-light text-gray-900 mb-16 text-center">Learnings &amp; Takeaways</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white border border-gray-200 rounded-[2rem] p-10 hover:-translate-y-1 transition-transform shadow-sm hover:shadow-xl">
+                    <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="ph ph-clock text-2xl text-gray-700"></i>
+                    </div>
+                    <h4 class="text-xl font-medium mb-4 text-gray-900">Designing in a short time frame</h4>
+                    <p class="text-gray-500 leading-relaxed">Building a product means learning to prioritize, simplify, and execute quickly without sacrificing core quality.</p>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-[2rem] p-10 hover:-translate-y-1 transition-transform shadow-sm hover:shadow-xl">
+                    <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="ph ph-arrows-clockwise text-2xl text-gray-700"></i>
+                    </div>
+                    <h4 class="text-xl font-medium mb-4 text-gray-900">Iterating and Pivoting</h4>
+                    <p class="text-gray-500 leading-relaxed">Learning that a design process is not linear, sometimes you need to go back to the drawing board.</p>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-[2rem] p-10 hover:-translate-y-1 transition-transform shadow-sm hover:shadow-xl">
+                    <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="ph ph-magic-wand text-2xl text-gray-700"></i>
+                    </div>
+                    <h4 class="text-xl font-medium mb-4 text-gray-900">Designing user experience for AI</h4>
+                    <p class="text-gray-500 leading-relaxed">The biggest challenge AI faces is articulation barriers. Designing within existing user flows is key.</p>
+                </div>
+            </div>
+
+            <!-- Back to top -->
+            <div class="mt-20 text-center">
+                <a href="#" class="inline-flex items-center gap-2 text-xl border-b border-gray-900 pb-1 hover:text-blue-600 hover:border-blue-600 transition-colors">
+                    <i class="ph ph-arrow-up"></i> Back to the top
+                </a>
+            </div>
+        </section>
+
+        <!-- Other Projects -->
+        <section class="bg-dark py-16">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <h3 class="text-3xl text-gray-400 font-light mb-16">Other Projects</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Project 1 -->
+                    <a href="scene.html" class="group block relative rounded-[2rem] overflow-hidden border border-gray-800 aspect-[4/3] md:aspect-auto">
+                        <img src="https://framerusercontent.com/images/z7vF8vrlKYIYp6XMduL2KHZPxwa2a7.png" alt="Scene Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 lg:p-12">
+                            <div class="flex items-end justify-between">
+                                <h4 class="text-white text-2xl font-light">Scene - Social app that<br>simplifies hangout planning</h4>
+                                <div class="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-white group-hover:text-black transition-colors">
+                                    <i class="ph ph-arrow-up-right text-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Project 2 -->
+                    <a href="kodiak.html" class="group block relative rounded-[2rem] overflow-hidden border border-gray-800 aspect-[4/3] md:aspect-auto">
+                        <img src="https://framerusercontent.com/images/PSH6GxgiqEKSQqUO5I2oZWxo4a2a7.png" alt="Kodiak Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 lg:p-12">
+                            <div class="flex items-end justify-between">
+                                <h4 class="text-white text-2xl font-light">Kodiak - Translating complex<br>data into visual cues</h4>
+                                <div class="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-white group-hover:text-black transition-colors">
+                                    <i class="ph ph-arrow-up-right text-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark border-t border-gray-800 text-white py-16">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-16 mb-24">
+                <div class="md:w-1/2">
+                    <h2 class="font-serif italic text-4xl md:text-5xl lg:text-7xl text-[#e2e1fc] leading-tight mb-4">
+                        Let's <span class="not-italic font-sans">✦</span> make something <span class="not-italic font-sans">✺</span><br>wonderful
+                    </h2>
+                    <p class="text-xs tracking-widest text-[#e2e1fc]/50 mt-8">PORTFOLIO 2025</p>
+                </div>
+                
+                <div class="md:w-1/2 flex flex-col sm:flex-row gap-16 md:justify-end">
+                    <div>
+                        <h4 class="text-gray-500 mb-4 uppercase tracking-wider text-sm font-semibold">Reach out to me</h4>
+                        <a href="mailto:aashnakeswani@gmail.com" class="text-xl lg:text-2xl border-b border-gray-600 pb-1 hover:text-blue-400 hover:border-blue-400 transition-colors">
+                            aashnakeswani@gmail.com
+                        </a>
+                    </div>
+                    <div>
+                        <h4 class="text-gray-500 mb-4 uppercase tracking-wider text-sm font-semibold">Find me on</h4>
+                        <div class="flex gap-4">
+                            <a href="https://www.linkedin.com/in/aashna-keswani-954b7517b/" target="_blank" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors">
+                                <i class="ph ph-linkedin-logo text-2xl"></i>
+                            </a>
+                            <a href="https://www.instagram.com/aashnaaa_k/" target="_blank" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 transition-colors">
+                                <i class="ph ph-instagram-logo text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom links -->
+            <div class="flex flex-wrap gap-8 items-center pt-8 border-t border-gray-800">
+                <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
+                <a href="play.html" class="text-gray-400 hover:text-white transition-colors">Play</a>
+                <a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Mobile Menu Toggle Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+            
+            // Toggle icon
+            const icon = menuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('ph-x');
+                icon.classList.add('ph-list');
+            } else {
+                icon.classList.remove('ph-list');
+                icon.classList.add('ph-x');
+            }
+        });
+
+        // Close menu on link click
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                menuBtn.querySelector('i').classList.remove('ph-x');
+                menuBtn.querySelector('i').classList.add('ph-list');
+            });
+        });
+
+        // Navbar Hide/Show on Scroll Logic
+        let lastScrollY = window.scrollY;
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            
+            // Hide navbar if scrolling down and past 80px
+            if (currentScrollY > lastScrollY && currentScrollY > 80) {
+                navbar.classList.add('-translate-y-full');
+            } 
+            // Show navbar if scrolling up or near the top
+            else {
+                navbar.classList.remove('-translate-y-full');
+            }
+            
+            lastScrollY = currentScrollY;
+        });
+    </script>
+</body>
+</html>
