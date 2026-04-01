@@ -13,6 +13,8 @@
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Phosphor Icons (for social links) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -65,24 +67,46 @@
         }
     </style>
 </head>
+
 <body class="bg-white text-gray-900 font-sans antialiased overflow-x-hidden">
 
     <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 transition-transform duration-300 transform translate-y-0">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="flex items-center gap-2">
-                <img src="https://framerusercontent.com/images/6i3DbwIDof6Tax3uV7v9RHzRtk187f.png" alt="Logo" class="h-8 w-auto object-contain">
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 transition-transform duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2 group font-display font-medium text-[20px] text-black transition-colors">HARSHAN
+                <!-- <div class="w-10 h-10 overflow-hidden rounded-lg group-hover:scale-105 transition-transform">
+                    <img src="https://framerusercontent.com/images/6i3DbwIDof6Tax3uV7v9RHzRtk187f.png" alt="Logo" class="w-full h-full object-cover">
+                </div> -->
             </a>
-            
-            <div class="hidden md:flex gap-8 items-center font-display font-medium text-gray-500">
-                <a href="works.html" class="text-black hover:text-blue-600 transition-colors">Work</a>
-                <a href="#" class="hover:text-black transition-colors">Playground</a>
-                <a href="about.html" class="hover:text-black transition-colors">About</a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 bg-gray-50/50 px-8 py-3 rounded-full border border-gray-100">
+                <a href="works.html" class="font-display font-medium text-[15px] text-gray-500 hover:text-black transition-colors">Work</a>
+                <a href="#playground" class="font-display font-medium text-[15px] text-gray-500 hover:text-black transition-colors">Playground</a>
+                <a href="about.html" class="font-display font-medium text-[15px] text-gray-500 hover:text-black transition-colors">About</a>
             </div>
 
-            <a href="#" class="bg-black text-white px-6 py-2 rounded-full font-medium hover:bg-gray-800 transition-all shadow-sm">
-                Resume
-            </a>
+           <!-- Resume Button -->
+            <div class="hidden md:flex">
+                <a href="https://drive.google.com/file/d/1L-5CLmUjqoa8CTmLdqn8HN0jWUb8e8A5/view" target="_blank" class="flex items-center gap-2 bg-dark text-white px-6 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors shadow-sm hover:shadow-md">
+                    Resume
+                    <i class="ph ph-arrow-up-right"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-2xl text-gray-800" id="mobile-menu-btn">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white border-t border-gray-100 px-6 py-4 flex-col gap-4 absolute w-full shadow-xl" id="mobile-menu">
+            <a href="works.html" class="font-display font-medium text-lg text-gray-600">Work</a>
+            <a href="#playground" class="font-display font-medium text-lg text-gray-600">Playground</a>
+            <a href="about.html" class="font-display font-medium text-lg text-gray-600">About</a>
+            <a href="https://drive.google.com/file/d/1L-5CLmUjqoa8CTmLdqn8HN0jWUb8e8A5/view" target="_blank" class="font-medium text-black mt-2">View Resume <i class="ph ph-arrow-up-right"></i></a>
         </div>
     </nav>
 
@@ -112,10 +136,10 @@
         </div>
 
         <h1 class="font-serif italic text-4xl md:text-4xl lg:text-5xl text-brand-navy mb-8 tracking-tight leading-tight max-w-4xl relative z-10">
-            Product Designer, Change Maker, Storyteller
+            UI/UX Designer,Product Designer,Experience Creator
         </h1>
         <p class="text-lg md:text-xl text-gray-900 max-w-2xl font-sans relative z-10 font-medium">
-            Currently shaping user-facing dashboard<br class="hidden md:block"> experience @ WeRadiate, NYC
+            Currently shaping AI-driven products<br class="hidden md:block">@Soft Suave Technologies, Bangalore.
         </p>
     </header>
 
@@ -153,11 +177,11 @@
         </h2>
 
         <!-- Project 1 -->
-        <article class="mb-32 reveal">
+        <article class="mb-24 reveal">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
                 <div>
                     <div class="flex items-center gap-3 mb-2">
-                        <img src="https://framerusercontent.com/images/cP4yARM7b8uaSshCcX87RlqUm8dfa8.png" alt="WeRadiate" class="w-8 h-8 rounded shadow-sm border border-gray-200">
+                        <img src="Assets/Casestudy/Ragworks/raglogo.png" alt="WeRadiate" class="w-8 h-8 rounded shadow-sm border border-gray-200">
                         <h3 class="text-xl font-bold">Ragworks AI Agentic Dashboard</h3>
                     </div>
                     <span class="text-brand-gray text-sm font-medium uppercase tracking-wider">Ongoing</span>
@@ -181,9 +205,8 @@
                     <img src="https://framerusercontent.com/images/6W9AgxIPB4yAdligUq2IoEkydw.png" alt="WeRadiate Mobile" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
                 </div>
             </div>
-            
-            <div class="text-right">
-                <a href="ragworks.html" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center gap-1 transition-colors">
+             <div class="text-right">
+                <a href="javascript:void(0)" data-protected="true" data-target="ragworks.html" data-password="123456" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center gap-1 transition-colors">
                     View Case Study <span class="text-lg">&rarr;</span>
                 </a>
             </div>
@@ -191,12 +214,12 @@
         </article>
 
         <!-- Project 2 -->
-        <article class="mb-32 reveal">
+        <article class="mb-24 reveal">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
                 <div>
                     <div class="flex items-center gap-3 mb-2">
                         <img src="https://framerusercontent.com/images/TuXpbzQt9KcHZMij6OdE9slvI.png" alt="Livable City" class="w-20 h-auto object-contain bg-black px-2 py-1 rounded shadow-sm border border-gray-200">
-                        <h3 class="text-xl font-bold">Livable City - Sunday Streets SF</h3>
+                        <h3 class="text-xl font-bold">Payslate Money Management App</h3>
                     </div>
                     <span class="text-brand-gray text-sm font-medium uppercase tracking-wider">2025</span>
                 </div>
@@ -208,7 +231,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-12 gap-4 mb-6">
                 <div class="md:col-span-3 rounded-xl overflow-hidden border border-gray-200 shadow-sm h-[280px]">
-                    <img src="https://framerusercontent.com/images/FKXdMCkuzb6jZ6N0FtADZUL9E.png" alt="Livable City UI" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                    <img src="Assets/Casestudy/Payslate/cover.png" alt="Livable City UI" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
                 </div>
                 <!-- Hidden on mobile -->
                 <div class="md:col-span-6 rounded-xl overflow-hidden border border-gray-200 shadow-sm h-[280px] hidden md:block">
@@ -221,7 +244,7 @@
             </div>
             
             <div class="text-right">
-                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center gap-1 transition-colors">
+                <a href="payslate.html" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center gap-1 transition-colors">
                     View Case Study <span class="text-lg">&rarr;</span>
                 </a>
             </div>
@@ -229,14 +252,14 @@
         </article>
 
         <!-- Project 3 -->
-        <article class="mb-32 reveal">
+        <article class="mb-24 reveal">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
                 <div>
                     <div class="flex items-center gap-3 mb-2">
-                        <img src="https://framerusercontent.com/images/1qSkvE4zFOVU2FEQ1Jq2v5iJYE908d.png" alt="Bud.AI" class="w-8 h-8 rounded shadow-sm border border-gray-200">
-                        <h3 class="text-xl font-bold">Bud.AI</h3>
+                        <img src="Assets/Casestudy/Dotmite/logo.png" alt="Bud.AI" class="w-8 h-8 rounded shadow-sm border border-gray-200">
+                        <h3 class="text-xl font-bold">Dotmite Software Outsourcing Website</h3>
                     </div>
-                    <span class="text-brand-gray text-sm font-medium uppercase tracking-wider">2024</span>
+                    <span class="text-brand-gray text-sm font-medium uppercase tracking-wider">2025</span>
                 </div>
                 <p class="text-lg md:text-xl text-gray-700 max-w-xl md:text-right">
                     Nature inspired AI tool turning biological insights into actionable artifacts, 
@@ -267,11 +290,11 @@
         </article>
 
         <!-- Project 4 -->
-        <article class="mb-32 reveal">
+        <article class="mb-24 reveal">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
                 <div>
-                    <h3 class="text-xl font-bold mb-2">Scene</h3>
-                    <span class="text-brand-gray text-sm font-medium uppercase tracking-wider">2024</span>
+                    <h3 class="text-xl font-bold mb-2">Crypto Exchange</h3>
+                    <span class="text-brand-gray text-sm font-medium uppercase tracking-wider">2025</span>
                 </div>
                 <p class="text-lg md:text-xl text-gray-700 max-w-xl md:text-right">
                     0 &rarr; 1 Product app concept, simplifying hangout experiences for friend groups, 
@@ -305,8 +328,8 @@
         <article class="mb-20 reveal">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
                 <div>
-                    <h3 class="text-xl font-bold mb-2">Ritual</h3>
-                    <span class="text-brand-gray text-sm font-medium uppercase tracking-wider">2025</span>
+                    <h3 class="text-xl font-bold mb-2">Women Safety SOS</h3>
+                    <span class="text-brand-gray text-sm font-medium uppercase tracking-wider">2024</span>
                 </div>
                 <p class="text-lg md:text-xl text-gray-700 max-w-xl md:text-right">
                     AI powered connected system helping women manage PCOS through 
@@ -336,51 +359,6 @@
         </article>
     </main>
 
-    <!-- Other Works Section -->
-    <section class="max-w-7xl mx-auto px-6 pb-32">
-        <h2 class="font-serif italic text-2xl md:text-3xl text-brand-navy mb-10 reveal">
-            Other Works
-        </h2>
-        
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <!-- Other 1 -->
-            <div class="reveal">
-                <div class="mb-4">
-                    <h3 class="text-xl font-bold mb-1">WeRadiate - Product Identity</h3>
-                    <span class="text-brand-gray text-sm font-medium uppercase tracking-wider">2022 - 2023</span>
-                </div>
-                <p class="text-gray-700 mb-6 font-medium">
-                    <span class="font-normal">Developing a cohesive visual product identity,</span> 
-                    increasing clients & driving revenue growth by 70% YOY
-                </p>
-                <div class="rounded-xl overflow-hidden border border-gray-200 shadow-sm h-[300px] mb-4">
-                    <img src="https://framerusercontent.com/images/vkucjKlQO4zfmtSP6jLWtZSv3d0.png" alt="Identity" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
-                </div>
-                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center gap-1 transition-colors">
-                    View Case Study &rarr;
-                </a>
-            </div>
-
-            <!-- Other 2 -->
-            <div class="reveal">
-                <div class="mb-4">
-                    <h3 class="text-xl font-bold mb-1">Kodiak- Custom Icon Suite</h3>
-                    <span class="text-brand-gray text-sm font-medium uppercase tracking-wider">2023</span>
-                </div>
-                <p class="text-gray-700 mb-6 font-medium">
-                    <span class="font-normal">Building an custom icon suite for a Health-Tech company,</span> 
-                    increasing footfall by 25% and reducing bounce rate by 9%
-                </p>
-                <div class="rounded-xl overflow-hidden border border-gray-200 shadow-sm h-[300px] mb-4">
-                    <img src="https://framerusercontent.com/images/PSH6GxgiqEKSQqUO5I2oZWxo4.png" alt="Icons" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
-                </div>
-                <a href="#" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center gap-1 transition-colors">
-                    View Case Study &rarr;
-                </a>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="bg-black text-white px-6 py-16 md:py-32 reveal mt-10">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
@@ -390,27 +368,27 @@
                 <h2 class="font-serif italic text-5xl md:text-6xl text-[#e2e1fc] leading-tight mb-4">
                     Let's ✧ make <br> something ✺ <br> wonderful
                 </h2>
-                <p class="text-[#e2e1fc]/70 text-sm tracking-widest mt-8 font-display">PORTFOLIO 2025</p>
+                <p class="text-[#e2e1fc]/70 text-sm tracking-widest mt-8 font-display">PORTFOLIO</p>
             </div>
 
             <!-- Column 2: Contact Info -->
             <div class="lg:col-span-4 flex flex-col gap-8 font-display">
                 <div>
                     <p class="text-gray-400 text-sm uppercase tracking-wider mb-2">Reach out to me</p>
-                    <a href="mailto:aashnakeswani@gmail.com" class="text-xl md:text-2xl underline hover:text-blue-400 transition-colors break-all">
-                        aashnakeswani@gmail.com
+                    <a href="mailto:harshankrishdev@gmail.com" class="text-xl md:text-2xl underline hover:text-blue-400 transition-colors break-all">
+                        harshankrishdev@gmail.com
                     </a>
                 </div>
                 <div>
                     <p class="text-gray-400 text-sm uppercase tracking-wider mb-4">Find me on</p>
                     <div class="flex gap-4">
                         <!-- LinkedIn -->
-                        <a href="https://www.linkedin.com/in/aashna-keswani/" target="_blank" class="bg-white/10 p-3 rounded-full hover:bg-blue-600 transition-colors">
+                        <a href="https://www.linkedin.com/in/harshankrishna-k-v" target="_blank" class="bg-white/10 p-3 rounded-full hover:bg-blue-600 transition-colors">
                             <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M 7.411 20.03 L 7.411 9.234 L 3.767 9.234 L 3.767 20.03 L 7.411 20.03 Z M 5.589 7.76 C 6.859 7.76 7.65 6.931 7.65 5.895 C 7.627 4.836 6.859 4.03 5.613 4.03 C 4.366 4.03 3.551 4.836 3.551 5.895 C 3.551 6.931 4.342 7.76 5.565 7.76 L 5.589 7.76 Z M 9.427 20.03 L 13.071 20.03 L 13.071 14.001 C 13.071 13.678 13.095 13.356 13.191 13.126 C 13.455 12.481 14.054 11.813 15.061 11.813 C 16.38 11.813 16.907 12.803 16.907 14.255 L 16.907 20.03 L 20.551 20.03 L 20.551 13.84 C 20.551 10.524 18.753 8.981 16.356 8.981 C 14.39 8.981 13.527 10.063 13.047 10.799 L 13.071 10.799 L 13.071 9.234 L 9.427 9.234 C 9.475 10.247 9.427 20.03 9.427 20.03 Z"></path></svg>
                         </a>
-                        <!-- Instagram -->
-                        <a href="https://www.instagram.com/crazystickerladyy/" target="_blank" class="bg-white/10 p-3 rounded-full hover:bg-pink-600 transition-colors">
-                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M 4 8.667 C 4 6.089 6.089 4 8.667 4 L 15.333 4 C 17.911 4 20 6.089 20 8.667 L 20 15.333 C 20 17.911 17.911 20 15.333 20 L 8.667 20 C 6.089 20 4 17.911 4 15.333 Z M 15.333 7.333 C 15.322 7.817 15.574 8.268 15.991 8.513 C 16.408 8.758 16.924 8.758 17.341 8.513 C 17.758 8.269 18.01 7.817 17.999 7.334 C 17.983 6.609 17.391 6.03 16.667 6.03 C 15.942 6.03 15.35 6.609 15.333 7.333 Z M 8.667 12 C 8.667 13.841 10.16 15.334 12.001 15.333 C 13.842 15.333 15.334 13.84 15.334 11.999 C 15.334 10.158 13.841 8.666 12 8.666 C 10.159 8.666 8.666 10.159 8.667 12 Z"></path></svg>
+                        <!-- Behance -->
+                        <a href="https://www.behance.net/harshankrishdev" target="_blank" class="bg-white/10 p-3 rounded-full hover:bg-blue-600 transition-colors">
+                           <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M22 7h-7v2h7V7zm-11.5 5c-1.1 0-2.1.2-2.1 1.4 0 1 .8 1.4 2.1 1.4h1.9v-2.8h-1.9zM22 13.5c0-3-2.3-3.8-4.3-3.8-3.1 0-4.8 2.2-4.8 5.1 0 3.1 2.1 5.2 5.1 5.2 2.3 0 4.1-1.1 4.7-2.9h-2.1c-.3.6-1.1 1-2.4 1-1.7 0-2.5-1-2.6-2.2h7.1v-2.4zm-4.3-1.6c1.1 0 1.9.5 2 1.8h-4.1c.1-1.4.9-1.8 2.1-1.8zM4.1 17.5h3.4c2.2 0 4-1.1 4-3.1 0-1.5-1.1-2.4-2.3-2.7.9-.3 1.8-1.2 1.8-2.4 0-1.9-1.5-2.8-3.6-2.8H4.1v11zm3.1-8.5c1.1 0 1.7.5 1.7 1.4 0 1-.8 1.4-1.8 1.4H6.2V9h1zM6.2 15.4v-3.1h1.1c1.2 0 1.9.5 1.9 1.5 0 1.1-.8 1.6-1.9 1.6H6.2z"/></svg>
                         </a>
                     </div>
                 </div>
@@ -418,9 +396,9 @@
 
             <!-- Column 3: Footer Navigation -->
             <div class="lg:col-span-2 flex flex-col gap-4 text-lg font-display">
-                <a href="#" class="hover:text-blue-400 transition-colors flex items-center justify-between group">Home <span class="text-sm opacity-50 group-hover:opacity-100 transition-opacity">&nearr;</span></a>
-                <a href="#" class="hover:text-blue-400 transition-colors flex items-center justify-between group">Play <span class="text-sm opacity-50 group-hover:opacity-100 transition-opacity">&nearr;</span></a>
-                <a href="#" class="hover:text-blue-400 transition-colors flex items-center justify-between group">About <span class="text-sm opacity-50 group-hover:opacity-100 transition-opacity">&nearr;</span></a>
+                <a href="index.html" class="hover:text-blue-400 transition-colors flex items-center justify-between group">Home <span class="text-sm opacity-50 group-hover:opacity-100 transition-opacity">&nearr;</span></a>
+                <a href="play.html" class="hover:text-blue-400 transition-colors flex items-center justify-between group">Play <span class="text-sm opacity-50 group-hover:opacity-100 transition-opacity">&nearr;</span></a>
+                <a href="about.html" class="hover:text-blue-400 transition-colors flex items-center justify-between group">About <span class="text-sm opacity-50 group-hover:opacity-100 transition-opacity">&nearr;</span></a>
             </div>
             
         </div>
@@ -464,6 +442,182 @@
                 }
                 lastScrollTop = scrollTop;
             });
+        });
+    </script>
+      <!-- Scroll Reveal JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 100;
+
+                reveals.forEach(reveal => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Trigger once on load
+
+            // Navbar Hide/Show on Scroll logic
+            const navbar = document.getElementById('navbar');
+            let lastScrollTop = 0;
+
+            window.addEventListener('scroll', () => {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop && scrollTop > 60) {
+                    // Scrolling down - hide navbar
+                    navbar.classList.remove('translate-y-0');
+                    navbar.classList.add('-translate-y-full');
+                } else {
+                    // Scrolling up - show navbar
+                    navbar.classList.remove('-translate-y-full');
+                    navbar.classList.add('translate-y-0');
+                }
+                lastScrollTop = scrollTop;
+            });
+
+            // --- Password Protected Modal Logic ---
+            const modal = document.getElementById('password-modal');
+            const modalContent = document.getElementById('password-modal-content');
+            const closeBtn = document.getElementById('close-modal');
+            const form = document.getElementById('password-form');
+            const input = document.getElementById('modal-password-input');
+            const errorMsg = document.getElementById('password-error');
+            let currentTarget = '';
+            let currentPassword = '';
+
+            const openModal = (target, password) => {
+                currentTarget = target;
+                currentPassword = password;
+                input.value = '';
+                errorMsg.classList.add('hidden');
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                
+                // Small delay to allow display:flex to apply before animating opacity
+                requestAnimationFrame(() => {
+                    modal.classList.remove('opacity-0');
+                    modalContent.classList.remove('scale-95');
+                    input.focus();
+                });
+            };
+
+            const closeModal = () => {
+                modal.classList.add('opacity-0');
+                modalContent.classList.add('scale-95');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                }, 300);
+            };
+
+            // Attach listeners to all protected links automatically
+            document.querySelectorAll('[data-protected="true"]').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openModal(btn.dataset.target, btn.dataset.password);
+                });
+            });
+
+            closeBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal(); // Close if clicked outside
+            });
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                if (input.value === currentPassword) {
+                    // Success: Redirect to target link
+                    window.location.href = currentTarget;
+                } else {
+                    // Error state
+                    errorMsg.classList.remove('hidden');
+                    input.classList.add('border-red-500', 'focus:border-red-500', 'focus:ring-red-500');
+                }
+            });
+            
+            input.addEventListener('input', () => {
+                // Clear error state as soon as the user types again
+                errorMsg.classList.add('hidden');
+                input.classList.remove('border-red-500', 'focus:border-red-500', 'focus:ring-red-500');
+            });
+        });
+    </script>
+
+    <!-- Password Protected Modal Component -->
+    <div id="password-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl p-8 max-w-sm w-full mx-4 shadow-2xl transform scale-95 transition-transform duration-300" id="password-modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold text-brand-navy">Protected Content</h3>
+                <button id="close-modal" class="text-gray-400 hover:text-black text-2xl leading-none transition-colors">&times;</button>
+            </div>
+            <p class="text-sm text-gray-600 mb-6">Please enter the password to view this case study.</p>
+            <form id="password-form" class="flex flex-col gap-4">
+                <div>
+                    <input type="password" id="modal-password-input" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors" placeholder="Enter password" required>
+                    <p id="password-error" class="text-red-500 text-xs mt-2 hidden font-medium">Incorrect password. Please try again.</p>
+                </div>
+                <button type="submit" class="bg-black text-white rounded-full py-3 font-medium hover:bg-gray-800 transition-colors mt-2">Unlock Case Study</button>
+            </form>
+        </div>
+    </div> 
+
+      <!-- Interactive Scripts -->
+    <script>
+        // Mobile Menu Toggle Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+            
+            // Toggle icon
+            const icon = menuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('ph-x');
+                icon.classList.add('ph-list');
+            } else {
+                icon.classList.remove('ph-list');
+                icon.classList.add('ph-x');
+            }
+        });
+
+        // Close menu on link click
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                menuBtn.querySelector('i').classList.remove('ph-x');
+                menuBtn.querySelector('i').classList.add('ph-list');
+            });
+        });
+
+        // Navbar Hide/Show on Scroll Logic
+        let lastScrollY = window.scrollY;
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            
+            // Hide navbar if scrolling down and past 80px
+            if (currentScrollY > lastScrollY && currentScrollY > 80) {
+                navbar.classList.add('-translate-y-full');
+            } 
+            // Show navbar if scrolling up or near the top
+            else {
+                navbar.classList.remove('-translate-y-full');
+            }
+            
+            lastScrollY = currentScrollY;
         });
     </script>
 </body>
