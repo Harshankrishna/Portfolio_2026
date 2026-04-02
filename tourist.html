@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist App - UI Design</title>
+    <meta name="description" content="Turning nature's strategies into actionable artifacts for innovators, designers and researchers.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons for simple UI elements -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"DM Sans"', 'sans-serif'],
+                        serif: ['"Libre Baskerville"', 'serif'],
+                        display: ['"Figtree"', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#121212',
+                        offwhite: '#f3f3ee',
+                        cardbg: '#f8f8ff'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
+        .text-balance {
+            text-wrap: balance;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 font-sans antialiased selection:bg-blue-200 selection:text-blue-900">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 transition-transform duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2 group font-display font-medium text-[20px] text-black transition-colors">HARSHAN
+                <!-- <div class="w-10 h-10 overflow-hidden rounded-lg group-hover:scale-105 transition-transform">
+                    <img src="https://framerusercontent.com/images/6i3DbwIDof6Tax3uV7v9RHzRtk187f.png" alt="Logo" class="w-full h-full object-cover">
+                </div> -->
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 bg-gray-50/50 px-8 py-3 rounded-full border border-gray-100">
+                <a href="works.html" class="font-display font-medium text-[15px] hover:text-blue-600 transition-colors">Work</a>
+                <a href="#playground" class="font-display font-medium text-[15px] text-gray-500 hover:text-blue-600 transition-colors">Playground</a>
+                <a href="about.html" class="font-display font-medium text-[15px] text-gray-500 hover:text-blue-600 transition-colors">About</a>
+            </div>
+
+            <!-- Resume Button -->
+            <div class="hidden md:flex">
+                <a href="https://drive.google.com/file/d/1L-5CLmUjqoa8CTmLdqn8HN0jWUb8e8A5/view" target="_blank" class="flex items-center gap-2 bg-dark text-white px-6 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors shadow-sm hover:shadow-md">
+                    Resume
+                    <i class="ph ph-arrow-up-right"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-2xl text-gray-800" id="mobile-menu-btn">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+
+         <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white border-t border-gray-100 px-6 py-4 flex-col gap-4 absolute w-full shadow-xl" id="mobile-menu">
+            <a href="works.html" class="font-display font-medium text-lg text-gray-600">Work</a>
+            <a href="#playground" class="font-display font-medium text-lg text-gray-600">Playground</a>
+            <a href="about.html" class="font-display font-medium text-lg text-gray-600">About</a>
+            <a href="https://drive.google.com/file/d/1L-5CLmUjqoa8CTmLdqn8HN0jWUb8e8A5/view" target="_blank" class="font-medium text-black mt-2">View Resume <i class="ph ph-arrow-up-right"></i></a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="w-full bg-gradient-to-b from-[#f4fff3] to-white pt-32 md:pt-48 pb-16 lg:pb-24 text-center">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8">
+                <a target="_blank" href="#"><h1 class="text-[17px] font-sans text-gray-800 mb-6">Tourist App</h1></a>
+                <h2 class="font-serif italic text-3xl md:text-4xl lg:text-[42px] leading-[1.4] text-balance mx-auto text-black">
+                    Turning nature's strategies into actionable artifacts for innovators, designers<br class="hidden md:block"> and researchers
+                </h2>
+                
+                <div class="flex flex-wrap justify-center gap-4 mt-10">
+                    <span class="bg-[#212020] text-white px-6 py-2.5 rounded-[20px] text-[13px] font-medium tracking-wide">Mobile App</span>
+                    <span class="bg-[#212020] text-white px-6 py-2.5 rounded-[20px] text-[13px] font-medium tracking-wide">Conversational AI</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hero Image -->
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 pb-20">
+            <div>
+                <img src="Assets/Casestudy/tourist/banner.webp" alt="Bud AI Dashboard Preview" class="w-full h-auto object-cover object-bottom" style="max-height: 100vh;">
+            </div>
+        </section>
+
+        <!-- Overview Details Grid -->
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-16 border-t border-gray-100">
+            <h3 class="font-serif italic text-3xl md:text-4xl text-gray-900 mb-12">Overview</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
+                <!-- Role -->
+                <div class="lg:col-span-2 flex flex-col gap-3">
+                    <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-500">My Role</h4>
+                    <p class="text-lg md:text-xl text-gray-800 leading-relaxed">Researching, Conversation Design, Prototyping flows, Visual Design and UI systems.</p>
+                </div>
+                <!-- Outcome -->
+                <div class="lg:col-span-3 flex flex-col gap-3">
+                    <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-500">Outcome</h4>
+                    <p class="text-lg md:text-xl text-gray-800 leading-relaxed">We expect to see a considerable difference in the way industrial designers, researchers and innovators approach sustainable design.</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16 pt-12 border-t border-gray-100">
+                <div class="flex flex-col gap-2">
+                    <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-500">Team</h4>
+                    <p class="text-lg text-gray-800">4 Designers, 2 Eng</p>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-500">Mentor</h4>
+                    <p class="text-lg text-gray-800">Nathan Sherdoff</p>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-500">Status</h4>
+                    <p class="text-lg text-gray-800 italic">Working on building a working prototype</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Details -->
+        <section class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+            <h4 class="text-blue-600 font-display font-bold tracking-widest text-sm uppercase mb-16 text-center">Process</h4>
+            
+            <div class="space-y-8">
+                <!-- Step 1 -->
+                <div class="text-center max-w-6xl mx-auto">
+                    <h3 class="text-3xl font-light text-gray-900 mb-4">Mapping out the common Problem Solving Flow</h3>
+                    <p class="text-gray-500 mb-12">The best products today blend AI seamlessly into familiar workflows. To build Bud, we wanted to do the same.</p>
+                    <div>
+                        <img src="Assets/Casestudy/tourist/1 (1).webp" alt="Problem Solving Flow" class="w-full h-auto">
+                    </div>
+                </div>
+                <div class="text-center max-w-6xl mx-auto">
+                        <img src="Assets/Casestudy/tourist/1 (2).webp" alt="Problem Solving Flow" class="w-full h-auto">
+                </div>
+                <div class="text-center max-w-6xl mx-auto">
+                        <img src="Assets/Casestudy/tourist/1 (5).webp" alt="Problem Solving Flow" class="w-full h-auto">
+                </div>
+                <div class="text-center max-w-6xl mx-auto">
+                        <img src="Assets/Casestudy/tourist/1 (4).webp" alt="Problem Solving Flow" class="w-full h-auto">
+                </div>
+                <div class="text-center max-w-6xl mx-auto">
+                        <img src="Assets/Casestudy/tourist/1 (3).webp" alt="Problem Solving Flow" class="w-full h-auto">
+                </div>
+                <div class="text-center max-w-6xl mx-auto">
+                        <img src="Assets/Casestudy/tourist/1 (6).webp" alt="Problem Solving Flow" class="w-full h-auto">
+                </div>
+                <div class="text-center max-w-6xl mx-auto">
+                        <img src="Assets/Casestudy/tourist/1 (7).webp" alt="Problem Solving Flow" class="w-full h-auto">
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Projects -->
+        <section class="bg-dark py-16">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <h3 class="text-3xl text-gray-400 font-light mb-16">Other Projects</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Project 1 -->
+                    <a href="scene.html" class="group block relative rounded-[2rem] overflow-hidden border border-gray-800 aspect-[4/3] md:aspect-auto">
+                        <img src="https://framerusercontent.com/images/z7vF8vrlKYIYp6XMduL2KHZPxwa2a7.png" alt="Scene Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 lg:p-12">
+                            <div class="flex items-end justify-between">
+                                <h4 class="text-white text-2xl font-light">Scene - Social app that<br>simplifies hangout planning</h4>
+                                <div class="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-white group-hover:text-black transition-colors">
+                                    <i class="ph ph-arrow-up-right text-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Project 2 -->
+                    <a href="kodiak.html" class="group block relative rounded-[2rem] overflow-hidden border border-gray-800 aspect-[4/3] md:aspect-auto">
+                        <img src="https://framerusercontent.com/images/PSH6GxgiqEKSQqUO5I2oZWxo4a2a7.png" alt="Kodiak Project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 lg:p-12">
+                            <div class="flex items-end justify-between">
+                                <h4 class="text-white text-2xl font-light">Kodiak - Translating complex<br>data into visual cues</h4>
+                                <div class="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-white group-hover:text-black transition-colors">
+                                    <i class="ph ph-arrow-up-right text-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white px-6 py-16 md:py-32 reveal mt-10">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
+            
+            <!-- Column 1: Big Text -->
+            <div class="lg:col-span-6 md:col-span-2">
+                <h2 class="font-serif italic text-5xl md:text-6xl text-[#e2e1fc] leading-tight mb-4">
+                    Let's ✧ make <br> something ✺ <br> wonderful
+                </h2>
+                <p class="text-[#e2e1fc]/70 text-sm tracking-widest mt-8 font-display">PORTFOLIO</p>
+            </div>
+
+            <!-- Column 2: Contact Info -->
+            <div class="lg:col-span-4 flex flex-col gap-8 font-display">
+                <div>
+                    <p class="text-gray-400 text-sm uppercase tracking-wider mb-2">Reach out to me</p>
+                    <a href="mailto:harshankrishdev@gmail.com" class="text-xl md:text-2xl underline hover:text-blue-400 transition-colors break-all">
+                        harshankrishdev@gmail.com
+                    </a>
+                </div>
+                <div>
+                    <p class="text-gray-400 text-sm uppercase tracking-wider mb-4">Find me on</p>
+                    <div class="flex gap-4">
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/harshankrishna-k-v" target="_blank" class="bg-white/10 p-3 rounded-full hover:bg-blue-600 transition-colors">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M 7.411 20.03 L 7.411 9.234 L 3.767 9.234 L 3.767 20.03 L 7.411 20.03 Z M 5.589 7.76 C 6.859 7.76 7.65 6.931 7.65 5.895 C 7.627 4.836 6.859 4.03 5.613 4.03 C 4.366 4.03 3.551 4.836 3.551 5.895 C 3.551 6.931 4.342 7.76 5.565 7.76 L 5.589 7.76 Z M 9.427 20.03 L 13.071 20.03 L 13.071 14.001 C 13.071 13.678 13.095 13.356 13.191 13.126 C 13.455 12.481 14.054 11.813 15.061 11.813 C 16.38 11.813 16.907 12.803 16.907 14.255 L 16.907 20.03 L 20.551 20.03 L 20.551 13.84 C 20.551 10.524 18.753 8.981 16.356 8.981 C 14.39 8.981 13.527 10.063 13.047 10.799 L 13.071 10.799 L 13.071 9.234 L 9.427 9.234 C 9.475 10.247 9.427 20.03 9.427 20.03 Z"></path></svg>
+                        </a>
+                        <!-- Behance -->
+                        <a href="https://www.behance.net/harshankrishdev" target="_blank" class="bg-white/10 p-3 rounded-full hover:bg-blue-600 transition-colors">
+                           <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M22 7h-7v2h7V7zm-11.5 5c-1.1 0-2.1.2-2.1 1.4 0 1 .8 1.4 2.1 1.4h1.9v-2.8h-1.9zM22 13.5c0-3-2.3-3.8-4.3-3.8-3.1 0-4.8 2.2-4.8 5.1 0 3.1 2.1 5.2 5.1 5.2 2.3 0 4.1-1.1 4.7-2.9h-2.1c-.3.6-1.1 1-2.4 1-1.7 0-2.5-1-2.6-2.2h7.1v-2.4zm-4.3-1.6c1.1 0 1.9.5 2 1.8h-4.1c.1-1.4.9-1.8 2.1-1.8zM4.1 17.5h3.4c2.2 0 4-1.1 4-3.1 0-1.5-1.1-2.4-2.3-2.7.9-.3 1.8-1.2 1.8-2.4 0-1.9-1.5-2.8-3.6-2.8H4.1v11zm3.1-8.5c1.1 0 1.7.5 1.7 1.4 0 1-.8 1.4-1.8 1.4H6.2V9h1zM6.2 15.4v-3.1h1.1c1.2 0 1.9.5 1.9 1.5 0 1.1-.8 1.6-1.9 1.6H6.2z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 3: Footer Navigation -->
+            <div class="lg:col-span-2 flex flex-col gap-4 text-lg font-display">
+                <a href="index.html" class="hover:text-blue-400 transition-colors flex items-center justify-between group">Home <span class="text-sm opacity-50 group-hover:opacity-100 transition-opacity">&nearr;</span></a>
+                <a href="play.html" class="hover:text-blue-400 transition-colors flex items-center justify-between group">Play <span class="text-sm opacity-50 group-hover:opacity-100 transition-opacity">&nearr;</span></a>
+                <a href="about.html" class="hover:text-blue-400 transition-colors flex items-center justify-between group">About <span class="text-sm opacity-50 group-hover:opacity-100 transition-opacity">&nearr;</span></a>
+            </div>
+            
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Mobile Menu Toggle Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+            
+            // Toggle icon
+            const icon = menuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('ph-x');
+                icon.classList.add('ph-list');
+            } else {
+                icon.classList.remove('ph-list');
+                icon.classList.add('ph-x');
+            }
+        });
+
+        // Close menu on link click
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                menuBtn.querySelector('i').classList.remove('ph-x');
+                menuBtn.querySelector('i').classList.add('ph-list');
+            });
+        });
+
+        // Navbar Hide/Show on Scroll Logic
+        let lastScrollY = window.scrollY;
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            
+            // Hide navbar if scrolling down and past 80px
+            if (currentScrollY > lastScrollY && currentScrollY > 80) {
+                navbar.classList.add('-translate-y-full');
+            } 
+            // Show navbar if scrolling up or near the top
+            else {
+                navbar.classList.remove('-translate-y-full');
+            }
+            
+            lastScrollY = currentScrollY;
+        });
+    </script>
+</body>
+</html>
