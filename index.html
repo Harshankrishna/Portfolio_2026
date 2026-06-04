@@ -11,11 +11,49 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Figtree:ital,wght@0,400;0,500;0,600;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Phosphor Icons (for social links) -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    
+    <style>
+        /* Hide scrollbar for marquee but allow scrolling */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Marquee Scrolling Animations */
+        @keyframes marquee-x {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        @keyframes marquee-x-reverse {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+        .animate-marquee {
+            animation: marquee-x 35s linear infinite;
+        }
+        .animate-marquee-reverse {
+            animation: marquee-x-reverse 40s linear infinite;
+        }
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+        .fade-edges {
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        }
+    </style>
+    
     <script>
         tailwind.config = {
             theme: {
@@ -672,8 +710,188 @@
 
         </div>
     </section>
-    
 
+        <!-- Infinite Scrolling Skills Marquee Section -->
+    <section class="w-full flex justify-center px-4 sm:px-6 relative z-10">
+        <div class="max-w-6xl w-full py-16 md:py-24 overflow-hidden relative">
+            
+            <div class="text-center mb-16 px-6">
+                <h2 class="font-serif italic text-3xl md:text-4xl text-[#1e3a8a] text-center mb-4 relative">My Skills & Tools</h2>
+                <p class="text-gray-500 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+                    Blending AI, design systems, and modern tools to build scalable digital experiences.
+                </p>
+            </div>
+
+            <!-- Marquee Container -->
+            <div class="fade-edges overflow-hidden relative w-full flex flex-col gap-6 py-4">
+                
+                <!-- Row 1: AI Tools -->
+                <div class="flex w-max animate-marquee marquee-track gap-4 pl-4 cursor-default">
+                    <!-- First Set -->
+                    <div class="flex items-center gap-4">
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <img src="Assets/chatgpt.webp" class="w-5 h-5" alt="ChatGPT">
+                            <span class="text-sm font-semibold text-gray-800">ChatGPT</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <img src="Assets/gemini.png" class="w-5 h-5" alt="Gemini">
+                            <span class="text-sm font-semibold text-gray-800">Gemini AI</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <img src="https://cdn.simpleicons.org/perplexity/black" class="w-5 h-5" alt="Perplexity">
+                            <span class="text-sm font-semibold text-gray-800">Perplexity</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <div class="w-5 h-5 rounded-md bg-fuchsia-100 flex items-center justify-center font-bold text-fuchsia-600 text-[10px]">S</div>
+                            <span class="text-sm font-semibold text-gray-800">Stitch AI</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <!-- <i data-lucide="workflow" class="w-5 h-5 text-blue-500"></i> -->
+                            <img src="Assets/flow.png" class="w-5 h-5" alt="flow">
+                            <span class="text-sm font-semibold text-gray-800">Google Flow</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <!-- <i data-lucide="rocket" class="w-5 h-5 text-orange-500"></i> -->
+                            <img src="Assets/antigravity.png" class="w-5 h-5" alt="flow">
+                            <span class="text-sm font-semibold text-gray-800">Google Antigravity</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <img src="https://cdn.simpleicons.org/figma" class="w-5 h-5" alt="Figma">
+                            <span class="text-sm font-semibold text-gray-800">Figma Maker</span>
+                        </div>
+                          <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <i data-lucide="wand-2" class="w-5 h-5 text-yellow-500"></i>
+                            <span class="text-sm font-semibold text-gray-800">Magic Patterns</span>
+                        </div>
+                    </div>
+                    <!-- Duplicated Set for Infinite Scroll -->
+                    <div class="flex items-center gap-4">
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <img src="Assets/chatgpt.webp" class="w-5 h-5" alt="ChatGPT">
+                            <span class="text-sm font-semibold text-gray-800">ChatGPT</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <img src="Assets/gemini.png" class="w-5 h-5" alt="Gemini">
+                            <span class="text-sm font-semibold text-gray-800">Gemini AI</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <img src="https://cdn.simpleicons.org/perplexity/black" class="w-5 h-5" alt="Perplexity">
+                            <span class="text-sm font-semibold text-gray-800">Perplexity</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <div class="w-5 h-5 rounded-md bg-fuchsia-100 flex items-center justify-center font-bold text-fuchsia-600 text-[10px]">S</div>
+                            <span class="text-sm font-semibold text-gray-800">Stitch AI</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <!-- <i data-lucide="workflow" class="w-5 h-5 text-blue-500"></i> -->
+                            <img src="Assets/flow.png" class="w-5 h-5" alt="flow">
+                            <span class="text-sm font-semibold text-gray-800">Google Flow</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <!-- <i data-lucide="rocket" class="w-5 h-5 text-orange-500"></i> -->
+                            <img src="Assets/antigravity.png" class="w-5 h-5" alt="flow">
+                            <span class="text-sm font-semibold text-gray-800">Google Antigravity</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <img src="https://cdn.simpleicons.org/figma" class="w-5 h-5" alt="Figma">
+                            <span class="text-sm font-semibold text-gray-800">Figma Maker</span>
+                        </div>
+                          <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <i data-lucide="wand-2" class="w-5 h-5 text-yellow-500"></i>
+                            <span class="text-sm font-semibold text-gray-800">Magic Patterns</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2: Design Tools (Reversed) -->
+                <div class="flex w-max animate-marquee-reverse marquee-track gap-4 pl-4 cursor-default">
+                    <!-- First Set -->
+                    <div class="flex items-center gap-4">
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <img src="https://cdn.simpleicons.org/figma" class="w-5 h-5" alt="Figma">
+                            <span class="text-sm font-semibold text-gray-800">Figma</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <img src="Assets/ps.png" class="w-5 h-5" alt="Photoshop">
+                            <span class="text-sm font-semibold text-gray-800">Photoshop</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <img src="Assets/ai.png" class="w-5 h-5" alt="Illustrator">
+                            <span class="text-sm font-semibold text-gray-800">Illustrator</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <img src="Assets/ae.png" class="w-5 h-5" alt="After Effects">
+                            <span class="text-sm font-semibold text-gray-800">After Effects</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <img src="Assets/pr.png" class="w-5 h-5" alt="Premiere Pro">
+                            <span class="text-sm font-semibold text-gray-800">Premiere Pro</span>
+                        </div>
+                    </div>
+                    <!-- Duplicated Set for Infinite Scroll -->
+                    <div class="flex items-center gap-4">
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <img src="https://cdn.simpleicons.org/figma" class="w-5 h-5" alt="Figma">
+                            <span class="text-sm font-semibold text-gray-800">Figma</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <img src="Assets/ps.png" class="w-5 h-5" alt="Photoshop">
+                            <span class="text-sm font-semibold text-gray-800">Photoshop</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <img src="Assets/ai.png" class="w-5 h-5" alt="Illustrator">
+                            <span class="text-sm font-semibold text-gray-800">Illustrator</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <img src="Assets/ae.png" class="w-5 h-5" alt="After Effects">
+                            <span class="text-sm font-semibold text-gray-800">After Effects</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <img src="Assets/pr.png" class="w-5 h-5" alt="Premiere Pro">
+                            <span class="text-sm font-semibold text-gray-800">Premiere Pro</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3: Web/Dev Tools -->
+                <div class="flex w-max animate-marquee marquee-track gap-4 pl-4 cursor-default">
+                    <!-- First Set -->
+                    <div class="flex items-center gap-4">
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <img src="https://cdn.simpleicons.org/wordpress/21759b" class="w-5 h-5" alt="WordPress">
+                            <span class="text-sm font-semibold text-gray-800">WordPress</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <img src="https://cdn.simpleicons.org/html5/E34F26" class="w-5 h-5" alt="HTML5">
+                            <span class="text-sm font-semibold text-gray-800">HTML</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <img src="Assets/css.png" class="w-5 h-5" alt="CSS3">
+                            <span class="text-sm font-semibold text-gray-800">CSS</span>
+                        </div>
+                    </div>
+                    <!-- Duplicated Set for Infinite Scroll -->
+                    <div class="flex items-center gap-4">
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <img src="https://cdn.simpleicons.org/wordpress/21759b" class="w-5 h-5" alt="WordPress">
+                            <span class="text-sm font-semibold text-gray-800">WordPress</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <img src="https://cdn.simpleicons.org/html5/E34F26" class="w-5 h-5" alt="HTML5">
+                            <span class="text-sm font-semibold text-gray-800">HTML</span>
+                        </div>
+                        <div class="inline-flex items-center gap-2.5 bg-white px-5 py-2.5 rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.05)] border border-gray-100 transition-all hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                            <img src="Assets/css.png" class="w-5 h-5" alt="CSS3">
+                            <span class="text-sm font-semibold text-gray-800">CSS</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    
     <!-- Footer -->
     <footer class="bg-black text-white px-6 py-16 md:py-32 reveal mt-10">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
@@ -934,6 +1152,9 @@
             
             lastScrollY = currentScrollY;
         });
+    </script>
+    <script>
+        lucide.createIcons();
     </script>
 </body>
 </html>
